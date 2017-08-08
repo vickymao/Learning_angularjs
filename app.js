@@ -8,14 +8,15 @@ app.use(express.static('public'));
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/facade/' + 'index.html');
 });
-app.post('/signin', function(req, res) {
+app.post('/signin', urlencodedParser, function(req, res) {
     var name = req.body.name;
-    var pwd = req.body.pwd;
-    if (name === 'vicky' && pwd === '123') {
+    //var pwd = req.body.pwd;
+    if (name == 'vicky') {
         var response = { name: name };
 
-        res.sendFile(__dirname + '/facade/' + 'profil.html');
-        res.end(JSON.stringify(response));
+        //res.sendFile(__dirname + '/facade/' + 'profil.html');
+        res.send(JSON.stringify(response));
+
     } else {
         res.send('failed admin');
     }
