@@ -8,9 +8,10 @@
 
 <body>
     <div ng-app="">
-        <form action='/signin' type='POST'>
-            <p>name : <input type="text" ng-model="name"></p>
-            <p>pwd : <input type="password" ng-model="pwd"></p>
+        <form action='/signin' method='POST'>
+            <p>name : <input type="text" ng-model="name" name="name"></p>
+            <p>pwd : <input type="password" ng-model="pwd" name "pwd"></p>
+            <input type="submit" value="Submit">
         </form>
     </div>
 </body>
